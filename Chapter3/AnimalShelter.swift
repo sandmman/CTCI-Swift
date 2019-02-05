@@ -65,6 +65,7 @@ class Shelter: AnimalShelter {
         return animals.remove(0)?.value
     }
     
+    // O(n2) version of Option 3: Don't at me.
     public func adopt<T>(type: T.Type) -> Animal? {
         var head = animals.head
         var idx = 0
