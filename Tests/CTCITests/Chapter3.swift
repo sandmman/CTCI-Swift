@@ -106,5 +106,14 @@ public class Chapter3: XCTestCase {
     
     // 3.5 Animal Shelter
     func test3_6() {
+        let shelter = Shelter()
+        shelter.add(animal: Dog(name: "rufus"))
+        shelter.add(animal: Cat(name: "kit"))
+        shelter.add(animal: Cat(name: "tom"))
+        shelter.add(animal: Dog(name: "jerry"))
+        let cat = shelter.adopt(type: Cat.self)
+        let dog = shelter.adopt(type: Dog.self)
+        XCTAssertEqual(cat as! Cat, Cat(name: "kit"))
+        XCTAssertEqual(dog as! Dog, Dog(name: "rufus"))
     }
 }
